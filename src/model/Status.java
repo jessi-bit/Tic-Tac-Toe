@@ -2,31 +2,6 @@ package model;
 
 import java.util.*;
 
-/*
- *  1. scrivere una interfaccia utente con una griglia 3x3 
- *  2. ogni cella contiene un bottone che quando viene premuto dall'utente A viene mostrata una X, quando viene premuto dall'utente B viene mostrata una O
- *  3. quando viene premuto un pulsante il pulsante viene nascosto ed al suo posto viene mostrata la label
- *  4. è il sistema che sa a chi tocca (inizia sempre il giocatore A)
- *  5. ad ogni pulsante premuto il sistema verifica se c'è un tris
- *  6. se non c'è un tris tocca all'altro giocatore
- *  7. se c'è un tris i pulsanti sono bloccati e viene mostrato un nuovo pulsante "inizia"
- *  8. se si preme "inizia" si crea una nuova partita
- * 
- */
-
-/*
- * Serve:
- * 
- * Ad ogni pressione del pulsante viene emesso un evento verso lo status
- * lo status controlla se c'è un tris
- * se c'è un tris emette un evento alla view che si sottoscrive e mostra chi ha vinto e blocca l'interfaccia
- * 
- * 1) una classe status che contiene lo stato della partita, ovvero un array 3x3 cioeè da GAME[0..2][0..2] il valore di ogni cella può essere vuoto, "X", "O"
- * 2) devi fare un metodo che ti dice se c'è un tris. Per vedere se c'è un tris devi vedere tutte le righe, tutte le colonne e tutte le diagonali se hanno lo stesso valore
- * if (game[0][0] == game[0][1] && game[0][1] == game[0][2] && game[0][0] == "X") { ha vinto A } sono 8 controlli per il giocatore A e 8 controlli per il giocatore B
- * dando il risultato di ogni mossa emetti un evento verso la view (esattamente come fatto con la calcolatrice)
- * 
- */
 
 public class Status extends Observable implements IObserver {
 	
